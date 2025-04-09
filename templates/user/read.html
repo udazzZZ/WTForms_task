@@ -1,0 +1,17 @@
+{% extends 'index.html' %} {% block title %} User info {% endblock %} 
+
+{% block content %}
+<h2 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">{{ user.name }}</h2>
+
+<h3 class="lh-3 text-body-emphasis mb-3">Email: {{ user.email }}</h3>
+<h3 class="lh-3 text-body-emphasis mb-3">Age: {{ user.age }}</h3>
+
+<a href="{{ url_for('user.update', user_id=user.id) }}" class="btn btn-primary"
+	>Update</a
+>
+<a
+	href="{{ url_for('user.delete', user_id=user.id) }}"
+	class="btn btn-secondary"
+	>Delete</a
+>
+{% endblock %}

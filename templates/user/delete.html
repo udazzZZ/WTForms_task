@@ -1,0 +1,8 @@
+{% extends 'index.html' %} {% block title %} Delete user {% endblock %}
+
+{% blockcontent %}
+<h2 class="display-4 fw-bold lh-1 text-body-emphasis mb-3">Delete?</h2>
+<form method="post">
+    {{ form.hidden_tag() }} {{ form.submit(class='btn btn-primary') }}
+</form>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "index.html" %} {% block title %} Users {% endblock %} 
+
+{% block content %}
+<h2 class="display-1 fw-bold lh-1 text-body-emphasis mb-3">All Users</h2>
+<ul class="list-group mb-3">
+	{% for user in users %}
+	<li class="list-group-item list-group-item-action">
+		<a
+			href="{{ url_for('user.view', user_id=user.id) }}"
+			class="text-decoration-none"
+			>{{ user.name }}</a
+		>
+	</li>
+	{% endfor %}
+</ul>
+
+<a href="{{ url_for('user.signup') }}" class="btn btn-primary">Sign up</a>
+{% endblock %}
