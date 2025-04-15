@@ -15,6 +15,7 @@ class User(db.Model):
     name: Mapped[str] = mapped_column(nullable=False)
     email: Mapped[str] = mapped_column(db.String(200), unique=True, nullable=False)
     age: Mapped[int] = mapped_column(nullable=False)
+    city: Mapped[str] = mapped_column(db.String(100), nullable=True)
 
     def __repr__(self):
         return f"<User {self.name}>"
